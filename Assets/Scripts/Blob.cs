@@ -33,7 +33,7 @@ public class Blob : MonoBehaviour
     // Change blobs to shrinking state when clicked.
     void OnMouseDown()
     {
-        if (!currentState is BlobStateShrinking)
+        if (!(currentState is BlobStateShrinking))
             ChangeState(new BlobStateShrinking(this)); 
     }
 
