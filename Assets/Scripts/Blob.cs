@@ -44,4 +44,6 @@ public class Blob : MonoBehaviour
         Destroy(gameObject);
         controller.Score = 10;
     }
+
+    public void SetScore (int s) => controller.Score = s;
 }
