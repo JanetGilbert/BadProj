@@ -41,7 +41,9 @@ public class BlobStateMoving : BlobState
         }
     }
 
-    public void Enter() // Overriden from base class.
+    // * The compiler warning here was because Enter() is an inherited function, but the 
+    //   "override" keyword was absent.
+    public override void Enter() // Overriden from base class.
     {
         base.Enter(); // Call base class.
 

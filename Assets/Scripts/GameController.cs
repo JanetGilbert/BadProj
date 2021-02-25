@@ -21,8 +21,16 @@ public class GameController : MonoBehaviour
     // How often do blobs spawn?
     private float spawnTimer;
 
+    // * Added Score property
     // Score is added on destroying blobs
-    private int score;
+    private int _score;
+    public int Score {
+        get { return _score; }
+        set {
+            _score += value;
+            scoreText.text = _score.ToString();
+        }
+    }
 
     // List of all the blobs in the game.
     private List<Blob> blobList = new List<Blob>();
@@ -58,11 +66,11 @@ public class GameController : MonoBehaviour
     }
 
     // Add and display score.
-    public void AddScore(int scoreToAdd)
+    /*public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
         scoreText.text = score.ToString();
-    }
+    }*/
 
     // Remove blob from blob list.
     public void RemoveFromList(Blob blob)
