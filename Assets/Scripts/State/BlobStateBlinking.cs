@@ -40,4 +40,8 @@ public class BlobStateBlinking : BlobState
         //rend = GetComponent<Renderer>();
 
     }
+
+    public override void Leave(){
+        blob.addPoint();
+    }
 }

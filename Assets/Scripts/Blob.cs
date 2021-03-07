@@ -50,4 +50,9 @@ public class Blob : MonoBehaviour
         Destroy(gameObject);
         controller.AddScore(10);
     }
+
+    public void addPoint()
+    {
+        controller.AddScore(1);
+    }
 }
