@@ -6,8 +6,8 @@ public class BlobStateBlinking : BlobState
 {
     //public Renderer rend;
 
-    private float elapsedTime = 0f;
-    private float endTime = 0.5f;
+    //private float elapsedTime = 0f;
+    //private float endTime = 0.5f;
    
     public BlobStateBlinking(Blob theBlob) : base(theBlob) // Derived class constructor calls base class constructor.
     {
