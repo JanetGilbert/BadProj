@@ -41,7 +41,9 @@ public class BlobStateMoving : BlobState
         }
     }
 
-    public void Enter() // Overriden from base class.
+    //The function declaration is missing the "override" keyword that should be used when implementing a function of an abstract parent class
+    //The game was previously broken because this function was not being called when entering Moving state
+    public override void Enter() // Overriden from base class.
     {
         base.Enter(); // Call base class.
 
