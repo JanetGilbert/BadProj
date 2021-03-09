@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     private float spawnTimer;
 
     // Score is added on destroying blobs
-    private int score;
+    public int Score;
 
     // List of all the blobs in the game.
     private List<Blob> blobList = new List<Blob>();
@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour
         // On pressing space bar, remove the the half of the list that is highest up in the y-axis.
         if (Input.GetKeyDown("space"))
         {
-            RemoveHighestBlobs();
+            //RemoveHighestBlobs();
         }
 
 
@@ -60,8 +60,8 @@ public class GameController : MonoBehaviour
     // Add and display score.
     public void AddScore(int scoreToAdd)
     {
-        score += scoreToAdd;
-        scoreText.text = score.ToString();
+        Score += scoreToAdd;
+        scoreText.text = Score.ToString();
     }
 
     // Remove blob from blob list.
@@ -71,19 +71,18 @@ public class GameController : MonoBehaviour
     }
 
     // Remove the blobs with the highest y values. 
-    public void RemoveHighestBlobs()
+    /*public void RemoveHighestBlobs()
     {
         // Selection sort the list of blobs by y
         for (int i = 0; i < blobList.Count; i++)
         {
             int lowest = i;
 
-            // TODO: Implement selection sort here!
 
-            // Swap
-            Blob temp = blobList[i];
-            blobList[i] = blobList[lowest];
-            blobList[lowest] = temp;
+            // TODO: COMPLETE THE SELECTION SORT CODE HERE
+
+            // Swap using a tuple
+            (blobList[i], blobList[lowest]) = (blobList[lowest], blobList[i]); // Good! Merge this
         }
 
         // Remove the 50% of the list with the highest y value.
@@ -95,7 +94,23 @@ public class GameController : MonoBehaviour
             blobList[i].Kill();
         }
         
-    }
+
+            // TODO: Implement selection sort here!
+            // Selection sort algorithm: Find the minumum value in the unsorted part of the array and place it at the beginning of the list.
+            // Repeat for the remaining portion of the array.
+            // Code based on https://www.geeksforgeeks.org/selection-sort/ // Good! Merge this
+
+            // Swap
+           // Blob temp = blobList[i];
+            //blobList[i] = blobList[lowest];
+           // blobList[lowest] = temp;
+
+
+        // Remove the 50% of the list with the highest y value.
+        //int toKill = blobList.Count / 2;
+        
+        
+    }*/
 
 
 }
