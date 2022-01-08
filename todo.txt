@@ -1,13 +1,16 @@
 Grading Guide and TODO list.
 
+* Submit the project via pull request.
+
+
 Grade D:
 
 There is a compiler warning in BlobStateMoving.cs. Fix it and explain (in a comment) what the problem was, and what effect it had on the game. 
 
-GameController.score is currently a private variable with a public function (AddScore) to change score. Replace both of these things with a public property called "Score" in the GameController class. This property should have a private backing variable and the Set function should run the equivalent the code currently in AddScore.
+"score" is currently a private variable in the GameController class. GameController has a public function AddScore() which adds a number to score. Refactor AddScore to be a public property called "Score" which allows you to change or access the score. Remember that properties should be used like variables rather than functions.
 
 Grade C:
-Replace the Quintic/Out easing function in BlobStateShrinking with a Quartic/Out easing function.
+Replace the Quintic easing function in BlobStateShrinking with a Quartic easing function.
 
 Bug: You can set the blob to "Shrinking" multiple times by clicking on it multiple times. Fix this bug so that the blob can't be set to Shrink while already in the Shrinking state.
 
@@ -18,9 +21,8 @@ Override the Leave() function in BlobStateBlinking to add 1 point to the score e
 
 Grade A:
 
-Merge Working1 and Working2 into master. Resolve the conflicts with the lines marked "Good."
+Merge Working1 and Working2 branches into Start. Resolve the conflicts with the lines marked "Good"
 
 Implement the selection sort algorithm in the RemoveHighestBlobs() function in the GameController class.
 
-Submit the project via pull request.
 
