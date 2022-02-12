@@ -10,6 +10,12 @@ public class Blob : MonoBehaviour
     private BlobState currentState; // Current blob state (unique to each blob)
     private GameController controller;  // Cached connection to game controller component
 
+    // Sine wave definitions.
+    public float amplitude = 0.5f;
+    public float sinSpeed = 2.0f;
+    public float minTime = 1.0f;
+    public float maxTime = 5.0f;
+
     void Start()
     {
         ChangeState(new BlobStateMoving(this)); // Set initial state.

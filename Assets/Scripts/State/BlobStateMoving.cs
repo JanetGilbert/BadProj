@@ -7,12 +7,6 @@ using UnityEngine;
  * In this state, the blob moves in a sine wave pattern.*/
 public class BlobStateMoving : BlobState
 {
-    // Sine wave definitions.
-    public const float speed = 0.01f;
-    public const float amplitude = 0.5f;
-    public const float sinSpeed = 2.0f;
-    public const float minTime = 1.0f;
-    public const float maxTime = 5.0f;
 
     // Movement over time.
     private Vector3 curPos;
@@ -32,7 +26,7 @@ public class BlobStateMoving : BlobState
 
         // Sine movement
         elapsedTime += Time.deltaTime;
-        Vector3 offset = new Vector3(0.0f, amplitude * Mathf.Sin(elapsedTime * sinSpeed), 0.0f);
+        Vector3 offset = new Vector3(0.0f, blob.amplitude * Mathf.Sin(elapsedTime * blob.sinSpeed), 0.0f);
         blob.transform.position = curPos + offset;
 
         if (elapsedTime > endTime)
@@ -41,12 +35,12 @@ public class BlobStateMoving : BlobState
         }
     }
 
-    public void Enter() // Overriden from base class.
+    public override void Enter() // Overriden from base class.
     {
         base.Enter(); // Call base class.
 
         curPos = blob.transform.position;
-        endTime = Random.Range(minTime, maxTime);
+        endTime = Random.Range(blob.minTime, blob.maxTime);
         direction = new Vector3(Random.Range(-1.0f, 1.0f), 0.0f, Random.Range(-1.0f, 1.0f)); // Move in random direction.
     }
 }
